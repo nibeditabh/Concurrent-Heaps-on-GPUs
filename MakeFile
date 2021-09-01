@@ -1,0 +1,15 @@
+TARGET = test
+
+HEADER = ParallelInstDel.cu ParallelOp.cu ConcHeap.cu
+
+SOURCE = test.cu
+
+NVCC = nvcc  
+
+all: test
+
+test: $(SOURCE) $(HEADER)
+	  $(NVCC) -g $(SOURCE) -o test
+
+clean: 
+	rm -f $(TARGET)
